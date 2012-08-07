@@ -1,0 +1,12 @@
+.logo{
+	background-position: 0px 100%;
+	background-repeat: no-repeat;
+	padding-bottom: 10px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	
+}
+.contents{
+	min-height:100px;
+	padding-top:50px;
+}
