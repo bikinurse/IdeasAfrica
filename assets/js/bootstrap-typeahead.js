@@ -1,21 +1,21 @@
 /* =============================================================
-* bootstrap-typeahead.js v2.0.0
-* http://twitter.github.com/bootstrap/javascript.html#typeahead
-* =============================================================
-* Copyright 2012 Twitter, Inc.
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-* ============================================================ */
+ * bootstrap-typeahead.js v2.0.0
+ * http://twitter.github.com/bootstrap/javascript.html#typeahead
+ * =============================================================
+ * Copyright 2012 Twitter, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ============================================================ */
 
 !function( $ ){
 
@@ -189,9 +189,9 @@
 
   , listen: function () {
       this.$element
-        .on('blur', $.proxy(this.blur, this))
+        .on('blur',     $.proxy(this.blur, this))
         .on('keypress', $.proxy(this.keypress, this))
-        .on('keyup', $.proxy(this.keyup, this))
+        .on('keyup',    $.proxy(this.keyup, this))
 
       if ($.browser.webkit || $.browser.msie) {
         this.$element.on('keydown', $.proxy(this.keypress, this))
@@ -272,7 +272,7 @@
 
 
   /* TYPEAHEAD PLUGIN DEFINITION
-* =========================== */
+   * =========================== */
 
   $.fn.typeahead = function ( option ) {
     return this.each(function () {
@@ -297,7 +297,7 @@
 
 
  /* TYPEAHEAD DATA-API
-* ================== */
+  * ================== */
 
   $(function () {
     $('body').on('focus.typeahead.data-api', '[data-provide="typeahead"]', function (e) {

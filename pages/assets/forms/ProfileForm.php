@@ -54,21 +54,23 @@ e.g. http://www.ideasafrica.com
 </div>
 </div>
 <div class="control-group">
-<label class="control-label" for="location">
+<label class="control-label" for="cities">
 Location
 </label>
 <div class="controls">
-<input type="text" class="input-xlarge autocomplete" category="cities" id="location"> <button class="btn"><i class="icon icon-plus"></i> Add</button>
+<div id="cities_selected"  style="margin-bottom:15px;"></div>
+<input type="text" class="input-xlarge autocomplete" category="cities" id="cities" autocomplete="off" data-provide="typeahead"> <span class="btn addOptionsBtn" id="add_cities"><i class="icon icon-plus"></i> Add</span>
 <p class="help-block">
 </p>
 </div>
 </div>
 <div class="control-group">
-<label class="control-label" for="market">
+<label class="control-label" for="markets">
 Target Market
 </label>
 <div class="controls">
-<input type="text" class="input-xlarge autocomplete" category="markets" id="market"> <button class="btn"><i class="icon icon-plus"></i> Add</button>
+<div id="markets_selected"  style="margin-bottom:15px;"></div>
+<input type="text" class="input-xlarge autocomplete" category="markets" id="markets"  autocomplete="off" data-provide="typeahead"> <span class="btn addOptionsBtn" id="add_markets"><i class="icon icon-plus"></i> Add</span>
 <p class="help-block">
 </p>
 </div>
@@ -108,7 +110,8 @@ Other needs
 What are your other needs?
 </label>
 <div class="controls">
-<input type="text" class="input-xlarge autocomplete" category="needs" id="otherNeeds"> <button class="btn"><i class="icon icon-plus"></i> Add</button>
+<div id="otherNeeds_selected"  style="margin-bottom:15px;"></div>
+<input type="text" class="input-xlarge autocomplete" category="needs" id="otherNeeds" autocomplete="off" data-provide="typeahead"> <span class="btn addOptionsBtn" id="add_otherNeeds"><i class="icon icon-plus"></i> Add</span>
 </div>
 </div>
 

@@ -3,8 +3,8 @@ session_start();
 include_once('../includes.php');
 DBase::db_connect();
 
-$key = trim(strip_tags($_GET['term']));//retrieve the search term that autocomplete sends
-$table = trim(strip_tags($_GET['category']));//retrieve the table
+$key = trim(strip_tags($_POST['term']));//retrieve the search term that autocomplete sends
+$table = trim(strip_tags($_POST['category']));//retrieve the table
 
 $qstring = "SELECT name as value,id FROM $table WHERE name LIKE '%".$key."%'";
 $result = mysql_query($qstring);//query the database for entries containing the term
