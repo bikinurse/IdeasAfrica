@@ -1,5 +1,33 @@
 var category = '';
 $(function(){
+	$('.addTeam').bind('click',function(){
+		var team = this.id.split('_')[1];
+		var team_id = $(this)[0].getAttribute('team');
+		var name = $('#'+team+'_name').val();
+		var email = $('#'+team+'_email').val();
+		$.ajax({
+			url:"kernel/form/save.team.php",
+			type:"POST",
+			data:"name="+name+"&email="+email+"&team_id="+team_id,
+			success:function(data){
+				$('#'+team+'_added').fadeIn('slow').append(data);
+				$('#'+team+'_name').val('');
+				$('#'+team+'_email').val('');
+			}
+			});
+		});
+	
+	$('.inModal').hide();
+	$('.open_inModal').bind('click',function(){
+		$('.inModal').hide();
+		$('.open_inModal').fadeIn();
+		$('#'+this.parentNode.id+'_inModal').fadeIn('slow');
+		$(this).hide();
+		});
+	$('.close_inModal').bind('click',function(){
+		$('.inModal').hide();
+		$('.open_inModal').fadeIn();
+		});
 	$(".addOptionsBtn").bind('click',function(){
 		//alert("clicked!");
 		var ID = this.id;
@@ -9,7 +37,7 @@ $(function(){
 		$.ajax({
 			url:"kernel/form/save.selected.php",
 			type:"POST",
-			data:"value="+Value,
+			data:"value="+Value+"&category="+inputtextID,
 			success:function(data){
 				$('#'+inputtextID).val("");
 				$("#"+inputtextID+"_selected").append(data);

@@ -84,6 +84,15 @@ class DBase{
 		$results = mysql_query($sql);
 		return mysql_result($results,0,'last_id');
 	}
+	public static function table_row_by_name($table, $name){
+		$sql = "select * from $table where name = '$name' limit 1";
+		$results = mysql_query($sql);
+		if($results){
+			return mysql_fetch_assoc($results);
+		}else{
+			return FALSE;
+		}
+	}
 	public static function table_row_by_username($table, $username){
 		$sql = "select * from $table where username = '$username' limit 1";
 		$results = mysql_query($sql);
