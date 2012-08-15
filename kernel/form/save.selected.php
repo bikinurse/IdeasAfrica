@@ -29,10 +29,18 @@ if(count($existing_value)==0){
 	$id = mysql_insert_id();
 	if($result){
 		?>
-		<span class="alert alert-info selected" id="<?php echo $id?>_<?php echo $table?>"><?php echo $value?>&nbsp;&nbsp;&nbsp;&nbsp;
-		<i class="icon-remove del_select"  tbl="<?php echo $table?>" vid="<?php echo $id?>"></i>
+		<li class='span5 thumbnail' id="<?php echo $id?>_<?php echo $table?>">
+		<span class='close del_select' vid="<?php echo $id?>" tbl="<?php echo $table?>" data-dismiss='alert' type='button'><i class='icon icon-remove'></i></span>
+		<i class="icon icon-ok-circle"></i> <?php echo $value?>
+		<br/>
+		<span class='greyed'>Not Confirmed</span><br/>
+		</li>
 		
-		</span>
+		
+		<!--<span class="alert alert-info selected" ><?php echo $value?>&nbsp;&nbsp;&nbsp;&nbsp;
+		<i class="icon-remove "   vid="<?php echo $id?>"></i>
+		
+		</span>-->
 		<?php
 		}else{
 		?>
@@ -53,7 +61,7 @@ $(function(){
 			type:"POST",
 			data:"vid="+vid+"&tbl="+tbl
 			});
-		$('#'+vid+'_'+tbl).fadeOut('slow');
+		/*$('#'+vid+'_'+tbl).fadeOut('slow');*/
 		});
 	});
 //-->

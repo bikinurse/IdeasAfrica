@@ -17,8 +17,20 @@
 padding-right:8px;
 margin-right:10px;
 }
+.load{
+	position:fixed;top:50px;right:10px;
+}
 .selected_content{
 	margin-bottom:15px;
+}
+.footer{
+	bottom:20px;
+}
+.imgLink{
+	opacity:.7;border:0;
+}
+.imgLink:hover{
+	cursor:pointer;opacity:1;
 }
 .step{
 	color:#ffffff;

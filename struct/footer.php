@@ -1,4 +1,7 @@
-<div class="footer container" align="center">Ideas Africa &copy;2012<div style="color:#c5c5c5"> Made by <a href="http://about.me/ekiru" style="color:#c5c5c5">Ekiru</a></div> </div>
+<div class="footer container" align="center">
+Ideas Africa &copy;2012
+<div class="greyed" style="color:#c5c5c5"> Made by <a href="http://about.me/ekiru" style="color:#c5c5c5">Ekiru</a></div>
+ </div>
    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/google-code-prettify/prettify.js"></script>
@@ -18,6 +21,7 @@
 	
 	<script src="assets/js/jquery.autogrow.js"></script>
 	<script src="assets/js/jquery-ui-1.8.22.custom.min.js"></script>
+	<script src="assets/js/jquery.form.js"></script>
     
 	
 	<script src="assets/js/ideas.js"></script>

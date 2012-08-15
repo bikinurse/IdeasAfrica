@@ -1,3 +1,10 @@
+<?php
+include_once('includes.php');
+DBase::db_connect();
+
+$user = DBase::table_row(1,'users');
+?>
+
 <div class="span1 step-holder">
 <!--<h6>Steps</h6>
 <hr/>-->
@@ -13,6 +20,7 @@
 
 <div class="">
 <form class="form-horizontal">
+<input type="hidden" name="t" value="users" id="t" />
 <!--About me-->
 <fieldset>
 <legend>About Me</legend>
@@ -20,24 +28,24 @@
 <div class="control-group">
 <label class="control-label" for="college">College</label>
 <div class="controls">
-<input type="text" class="input-xlarge" id="college">
+<input type="text" class="input-xlarge autosave" value="<?php echo $user['college'] !=NULL ? $user['college']: "" ?>" id="college">
 <p class="help-block">Please enter the name of the College you attended here, e.g. <i>The University of Nairobi</i></p>
 </div>
 </div>
 
 
 <div class="control-group">
-<label class="control-label" for="work">Work</label>
+<label class="control-label " for="work">Work</label>
 <div class="controls">
-<input type="text" class="input-xlarge" id="work">
+<input type="text" class="input-xlarge autosave" value="<?php echo $user['work'] !=NULL ? $user['work']: "" ?>" id="work">
 <p class="help-block">Please enter a place you have worked here, e.g. <i>Google</i></p>
 </div>
 </div>
 
 <div class="control-group">
-<label class="control-label" for="bio">Mini-Bio</label>
+<label class="control-label " for="min_bio">Mini-Bio</label>
 <div class="controls">
-<textarea class="input-xlarge" id="bio"></textarea>
+<textarea class="input-xlarge autosave"  id="min_bio">value="<?php echo $user['min_bio'] !=NULL ? $user['min_bio']: "" ?>"</textarea>
 <p class="help-block"><!--Please enter the name of the College you attended here, e.g. <i>The University of Nairobi</i>--></p>
 </div>
 </div>

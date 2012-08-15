@@ -5,14 +5,11 @@
 <img src="assets/img/ideasafrica.logo.JPG" width="400"/>
 </div>
 <hr/>
-<div class="row-fluid offset3">
-<div class="span9 "  align="center">
-<!--<h1>Signup</h1>-->
-<button class="btn  span4"><h6>Signup with Twitter</h6></button> &nbsp;
-<button class="btn  span4"><h6>Signup with Facebook</h6></button>
+<div class="row-fluid" style="height:200px;vertical-align:middle;padding-top:100px;">
+<div class="span4">&nbsp;</div>
+<div class="span2 "  align="center"><a href=""><img src="assets/img/twitter-signin.png" class="imgLink"/></a></div>
+<div class="span2 "  align="center"><img src="assets/img/facebook-signin.png"/></div>
+<div class="span4"  align="center">
 </div>
-<div class="span6"  align="center">
-</div>
-<div class="span4"></div>
 </div>
 </div>

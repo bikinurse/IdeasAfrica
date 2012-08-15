@@ -1,5 +1,31 @@
 var category = '';
 $(function(){
+	
+	//image Upload
+	$('#imgUpload').bind('click',function(){
+		$.ajax({
+			url:'pages/assets/forms/image.upload.php',
+			success:function(data){
+				$('#ImageCenter').html(data);	
+			}
+			});
+		
+		});
+	
+	$('.autosave').bind('blur',function(){
+		var t = $('#t').val();
+		var FE_id = this.id;
+		var val = $(this).val();
+		$.ajax({
+			url:'kernel/autosave.php?info='+t+'|'+FE_id+'|val='+val+'|1',
+			success:function(data){
+				
+				//$('#bar').html(percentage+'%');
+				$(this).after(data);
+			}
+			});
+		});
+	
 	$('.addTeam').bind('click',function(){
 		var team = this.id.split('_')[1];
 		var team_id = $(this)[0].getAttribute('team');
@@ -15,6 +41,17 @@ $(function(){
 				$('#'+team+'_email').val('');
 			}
 			});
+		});
+	$(".del_select").bind('click',function(){
+		var vid = $(this)[0].getAttribute('vid');
+		var tbl = $(this)[0].getAttribute('tbl');
+		
+		$.ajax({
+			url:"kernel/delete.php",
+			type:"POST",
+			data:"vid="+vid+"&tbl="+tbl
+			});
+		/*$('#'+vid+'_'+tbl).fadeOut('slow');*/
 		});
 	
 	$('.inModal').hide();
@@ -40,7 +77,7 @@ $(function(){
 			data:"value="+Value+"&category="+inputtextID,
 			success:function(data){
 				$('#'+inputtextID).val("");
-				$("#"+inputtextID+"_selected").append(data);
+				$("#"+inputtextID+"_selected .thumbnails").append(data);
 			}
 			});
 		
