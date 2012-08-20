@@ -112,8 +112,9 @@ class DBase{
 		}
 	}
 	public static function update_by_id($table, $dbFieldName, $val,$id){
-		$sql = "update $table set $dbFieldName = '$val' where id='$id'";
+		$sql = "update $table set $dbFieldName = '$val' where id='$id' limit 1";
 		return (mysql_query($sql));
+		//return ($sql);
 	}
 	public static function delete_by_id($table,$id){
 		$sql = "delete from $table where id='$id'";

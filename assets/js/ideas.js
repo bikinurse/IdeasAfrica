@@ -17,7 +17,7 @@ $(function(){
 		var FE_id = this.id;
 		var val = $(this).val();
 		$.ajax({
-			url:'kernel/autosave.php?info='+t+'|'+FE_id+'|val='+val+'|1',
+			url:'kernel/autosave.php?info='+t+'|'+FE_id+'|'+val+'|1',
 			success:function(data){
 				
 				//$('#bar').html(percentage+'%');
@@ -25,6 +25,17 @@ $(function(){
 			}
 			});
 		});
+	$('#publish').bind('click',function(){
+		$.ajax({
+			url:'kernel/autosave.php?info=companies|published|1|1',
+			success:function(data){
+				
+				//$('#bar').html(percentage+'%');
+				window.header = './';
+			}
+			});
+	});
+	
 	
 	$('.addTeam').bind('click',function(){
 		var team = this.id.split('_')[1];

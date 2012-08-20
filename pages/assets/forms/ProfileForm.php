@@ -194,7 +194,7 @@ I Agree to Ideas Africa terms and conditions
 </div>
 <div class="control-group">
 <div class="controls">
-<a href="./?n=z"><span class="btn btn-info span3" style="margin-left:0">Continue &nbsp;&nbsp;<i class="icon icon-step-forward"></i></span></a>
+<a href="./?n=z" class="btn btn-info span3" style="margin-left:0">Continue&nbsp;<i class="icon icon-step-forward"></i></a>
 </div>
 </div>
 </form>

@@ -2,8 +2,8 @@
 
 <?php 
 /* If access tokens are not available redirect to connect page. */
-if(!empty($_SESSION['username'])){  
-	include_once("pages/signup.php");
+if(empty($_SESSION['username'])){  
+	include_once("pages/home.php");
 }else{
 	include_once("pages/profile.php");
 }

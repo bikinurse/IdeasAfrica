@@ -27,7 +27,7 @@ if(!empty($_GET['oauth_verifier']) && !empty($_SESSION['oauth_token']) && !empty
     
     //User Handle
     
-    mysql_connect('localhost', 'ideasafr_ica', 'ideasafrica');  
+    mysql_connect('localhost', 'ideasafr_ica', 'ideasafr_ica');  
 mysql_select_db('ideasafr_ideas'); 
 
 
@@ -41,7 +41,7 @@ mysql_select_db('ideasafr_ideas');
       
         // If not, let's add it to the database  
         if(empty($result)){  
-            $query = mysql_query("INSERT INTO users (oauth_provider, oauth_uid, username, oauth_token, oauth_secret) VALUES ('twitter', {$user_info->id}, '{$user_info->screen_name}', '{$access_token['oauth_token']}', '{$access_token['oauth_token_secret']}')");  
+            $query = mysql_query("INSERT INTO users (oauth_provider, oauth_uid, username, oauth_token, oauth_secret) VALUES ('twitter', {$user_info->id}, '{$user_info->screen_name}', '{$access_token['oauth_token']}', '{$access_token['oauth_token_secret']}')");  $query = mysql_query("insert into campanies(user_id,date_added) values('{$result['id']}',now())");
             $query = mysql_query("SELECT * FROM users WHERE id = " . mysql_insert_id());  
             $result = mysql_fetch_array($query);  
         } else {  
@@ -56,5 +56,5 @@ mysql_select_db('ideasafr_ideas');
         $_SESSION['oauth_token'] = $result['oauth_token']; 
         $_SESSION['oauth_secret'] = $result['oauth_secret']; 
      
-        header('Location: index.php');  
+        header('Location: ./');  
     }  

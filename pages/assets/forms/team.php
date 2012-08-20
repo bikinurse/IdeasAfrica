@@ -2,7 +2,7 @@
 include_once('includes.php');
 DBase::db_connect();
 
-$user = DBase::table_row(1,'users');
+$user = DBase::table_row($_SESSION['id'],'users');
 ?>
 
 <div class="span1 step-holder">
@@ -45,7 +45,7 @@ $user = DBase::table_row(1,'users');
 <div class="control-group">
 <label class="control-label " for="min_bio">Mini-Bio</label>
 <div class="controls">
-<textarea class="input-xlarge autosave"  id="min_bio">value="<?php echo $user['min_bio'] !=NULL ? $user['min_bio']: "" ?>"</textarea>
+<textarea class="input-xlarge autosave"  id="min_bio"><?php echo $user['min_bio'] !=NULL ? $user['min_bio']: "" ?></textarea>
 <p class="help-block"><!--Please enter the name of the College you attended here, e.g. <i>The University of Nairobi</i>--></p>
 </div>
 </div>
@@ -217,7 +217,7 @@ $user = DBase::table_row(1,'users');
 <hr/>
 <div class="control-group">
 <div class="controls">
-<button class="btn btn-info span3" style="margin-left:0"><i class="icon icon-hdd"></i>&nbsp;&nbsp;Save and Continue</button>
+<span class="btn btn-info span3" id="publish" cid="<?php echo $_SESSION['id']?>" style="margin-left:0"><i class="icon icon-hdd"></i>&nbsp;&nbsp;Save and Publish</span>
 </div>
 </div>
 </form>
