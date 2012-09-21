@@ -64,3 +64,12 @@ margin-right:10px;
 .span_link:hover{
 	text-decoration:underline;color:#0055aa
 }
+/** added by tom **/
+#person-profile img:hover{
+    opacity: 0.5;
+}
+
+.row-fluid .feeds [class*="span"]:first-child{
+    margin-left:1.3em;
+}
+

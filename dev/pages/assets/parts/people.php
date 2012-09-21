@@ -14,7 +14,7 @@ $person = DBase::table_row($person_id,"users");
 	<img src="profilePic/user.png" height="50"/>
 	</div>
 	<div class="span4">
-	<b><?php echo $person['name'] != NULL? $person['name']:"";?></b>
+	<b><a href="?person=<?=$person['id']?>"><?php echo $person['name'] != NULL? $person['name']:"";?></a></b>
 	<p><?php echo $person['mini_bio'] != NULL? $person['mini_bio']:"";?></p>
 	<div class="greyed">
 	<?php echo $person['college'] != NULL? "went to ".$person['college']."&bull;":"";?>

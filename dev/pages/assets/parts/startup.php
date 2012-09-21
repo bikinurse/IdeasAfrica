@@ -1,6 +1,10 @@
 <div class="container" style="margin-top:40px;">
 <hr/><?php
 $company_id = (int) $_GET['startup'];
+$user_id = 0;
+if(isset($_SESSION['id'])){
+    $user_id = $_SESSION['id'];
+}
 $company = DBase::table_row($company_id,'companies');
 //print_r($company);
 //echo "c".$company_id;
@@ -26,9 +30,9 @@ if($markets)
 <span class="greyed">Followers</span>
 </div>
 <?php
-if(isset($_SESSION['id']))
+if($user_id > 0)
 {
-	if(is_follower($_SESSION['id']))
+	if(is_follower($user_id))
 	{
 		?>
 		<button class="btn span12 unfollow"  cid="<?php echo $_GET['startup']?>" id="unfollow" data-loading-text="Following..."><strong>Unfollow</strong></button>
@@ -67,14 +71,14 @@ if(isset($_SESSION['id']))
 
 <label for="comment">Post a comment</label>
 <textarea name="comment" id="comment" class="span12"></textarea>
-<button class="btn btn-primary"  <?php echo $_SESSION['id']==NULL? "disabled='disabled'":""?> id="post_comment" cid="<?php echo $_GET['startup']?>"><i class="icon icon-comment"></i> Post</button>
+<button class="btn btn-primary"  <?php echo $user_id == 0? "disabled='disabled'":""?> id="post_comment" cid="<?php echo $_GET['startup']?>"><i class="icon icon-comment"></i> Post</button>
 <hr/>
 
 
 
 <div>
 <?php
-$company_activities = company_feeds($company_id);
+$company_activities = company_feeds($company_id,"company");
 print_r($company_activities);
 $company_id = (int) $_GET['startup'];
 /*$sql = "SELECT * FROM company_activities, company_comments WHERE company_activities.company_id ='$company_id' order by company_activities.time_performed, company_comments.time_performed desc";

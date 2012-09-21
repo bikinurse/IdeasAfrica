@@ -1,5 +1,8 @@
 <?php
 class DBase{
+    public function __construct() {
+        self::db_connect();
+    }
 	public static function db_connect(){
 
 		//include("db.php");
@@ -134,6 +137,19 @@ class DBase{
 			return FALSE;
 		}
 	}
+        
+        public static function getBysql($sql){
+            $results = mysql_query($sql);
+            $rows = array();
+		if($results){
+			while($row = mysql_fetch_array($results)){
+                            $rows[] = $row;
+                        }
+		}else{
+			return FALSE;
+		}
+                return $rows;
+        }
 	public static function update_by_id($table, $dbFieldName, $val,$id){
 		$sql = "update $table set $dbFieldName = '$val' where id='$id'";
 		return (mysql_query($sql));

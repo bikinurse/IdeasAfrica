@@ -6,8 +6,11 @@ session_start();
 <head>
 <meta charset="utf-8">
 <title>Ideas Africa</title>
+
 <link href="assets/css/bootstrap.css" rel="stylesheet">
 <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 <link href="assets/css/main.css" rel="stylesheet">
+<link href="assets/js/qtip/jquery.qtip.min.css" rel="stylesheet">
+
 </head>
 <body>

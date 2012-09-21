@@ -1,6 +1,9 @@
 <?php
-
+$error = "";
+if(isset($_GET['error']))
+    $error = $_GET['error'];
 ?>
+
 <div class="container" style="margin-top:40px;">
 <br/>
 
@@ -11,6 +14,12 @@
 <div class="row-fluid">
 <div class="span2">&nbsp;</div>
 <div class="span8">
+    <?php if(strlen($error) > 0): ?>
+<div class="alert">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Warning!</strong> <?= $error ?>
+    </div>
+    <?php endif; ?>
 <form action="login.php" method="POST">
 <h2 align="center">Login</h2>
 <hr/>

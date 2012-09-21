@@ -22,6 +22,6 @@ if(!empty($user)){
 	//echo $company_id;
 	header('location: ./');
 	}else{
-	header('location: ./?&error=Login error');
+	header('location: ./?login=1&error=Login error');
 }
 ?>
